@@ -45,8 +45,8 @@ app.get('/download/:code/', async (req, res) => {
         margin: 50,
         info: {
             Title: he.decode(title),
-            Author: t.get('artist').join(', '),
-            Keywords: t.get('tag').join(', '),
+            Author: t.get('artist')?.join(', ') ?? 'N/A',
+            Keywords: t.get('tag')?.join(', ') ?? 'N/A',
             CreationDate: new Date(upload_date * 1000),
         },
         autoFirstPage: false,
