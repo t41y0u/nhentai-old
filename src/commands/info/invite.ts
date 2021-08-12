@@ -15,9 +15,7 @@ export default class extends Command {
 
     async exec(message: Message) {
         const embed = this.client.embeds.default().setDescription(
-            `[Here](${await this.client.generateInvite({
-                permissions: PERMISSIONS,
-            })}) is my invite link!`
+            `[Here](https://discord.com/api/oauth2/authorize?client_id=663743798722953258&permissions=103116007424&scope=bot%20applications.commands) is my invite link!`
         );
         return message.channel.send({ embed });
     }
