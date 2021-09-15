@@ -95,7 +95,7 @@ export class Client extends AkairoClient {
     }
 
     async start(): Promise<void> {
-        this.notifier = fork(`${__dirname}/../submodules/notifier/index`, [
+        /* this.notifier = fork(`${__dirname}/../submodules/notifier/index`, [
             '-r',
             'tsconfig-paths/register',
         ]).on(
@@ -124,7 +124,7 @@ export class Client extends AkairoClient {
                     )
                     .then(message => message.delete({ timeout: 5000 }));
             }
-        );
+        ); */
         this.inhibitorHandler.loadAll();
         this.listenerHandler.setEmitters({
             commandHandler: this.commandHandler,
@@ -134,7 +134,7 @@ export class Client extends AkairoClient {
         });
         this.listenerHandler.loadAll();
         await this.db.init();
-        await this.fakku.setup(); // Comment this line out if you don't want to scrape Fakku magazine page everytime the bot starts up
+        // await this.fakku.setup(); // Comment this line out if you don't want to scrape Fakku magazine page everytime the bot starts up
         await super.login(DISCORD_TOKEN);
         const owner = (await super.fetchApplication()).owner!.id;
         this.ownerID = this.commandHandler.ignoreCooldown = owner;
