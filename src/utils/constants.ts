@@ -51,3 +51,5 @@ export const TAGS = <const>[
     'language',
     'category',
 ];
+
+export const DEPRECATION_MESSAGE = 'The message-based commands will soon be deprecated and removed on 01/01/2022. Please switch to using [slash commands](https://support.discord.com/hc/en-us/articles/1500000368501-Slash-Commands-FAQ) for more updated features and bug fixes.';
